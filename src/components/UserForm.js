@@ -10,12 +10,15 @@ import { v4 as uuid } from "uuid";
 //   const handleSubmit = (e) => {
 //     e.preventDefault();
 
+//creates an object with the details
+//of the new user including an auto generated id
 //     let newUser = {
 //       name: name,
 //       email: email,
 //       id: uuid(),
 //     };
 
+//triggers the addUser action
 //     props.addUser(newUser);
 //   };
 
@@ -36,6 +39,9 @@ import { v4 as uuid } from "uuid";
 //   );
 // }
 
+/*
+    passes the addUser action to the component as props
+*/
 // const mapDispatch = {
 //   addUser: addUser,
 // };
@@ -46,6 +52,7 @@ const UserForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  //hook to help trigger actions
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -57,6 +64,7 @@ const UserForm = () => {
       id: uuid(),
     };
 
+    //triggers the addUser action
     dispatch(addUser(newUser));
   };
 

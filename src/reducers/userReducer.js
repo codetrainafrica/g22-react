@@ -10,15 +10,18 @@ const initialState = {
 };
 
 const userReducer = (state = initialState, actions) => {
+  //checks what type of action was triggered
   switch (actions.type) {
+    //runs if the add user action was triggered
     case "ADD_USER":
-      console.log(actions.payload);
       return { ...state, users: [...state.users, actions.payload] };
 
+    //runs if the delete user action was triggered
     case "DELETE_USER":
       //code to delete user
       return state;
 
+    //runs if no acion was triggered
     default:
       return state;
   }
